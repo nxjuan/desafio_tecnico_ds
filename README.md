@@ -124,24 +124,5 @@ Em outro terminal:
       }
     ]
 
-
----
-
-## Scripts úteis
-
-### Backend
-
-    # rodar em dev
-    ./mvnw spring-boot:run
-
-    # build jar
-    ./mvnw clean package
-    java -jar target/desafio_tecnico_direct_solution-0.0.1-SNAPSHOT.jar
-
-### Frontend
-
-    npm run dev        # modo desenvolvimento (Vite)
-    
-
 ---
 
