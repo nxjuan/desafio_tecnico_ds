@@ -33,6 +33,30 @@ Sistema para **agendar transferências** calculando a **taxa por faixa de dias**
 
 ---
 
+## Executar com Docker
+
+> Pré-requisitos: **Docker** e **Docker Compose** instalados.
+
+### Arquivos esperados
+Se ainda não criou, adicione estes arquivos (nos caminhos indicados):
+
+- `api/Dockerfile` — build e runtime da API Spring Boot  
+- `frontend/Dockerfile` — build do front (Vite) e runtime em **nginx**  
+- `frontend/nginx.conf` — entrega do SPA e **proxy** `/api → api:8080`  
+- `docker-compose.yml` — orquestra API + Front  
+- `.dockerignore` *(opcional)* — ignora `target/`, `node_modules/`, etc.
+
+
+### Subir os containers
+Na **raiz do repositório**:
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+---
+
 ## Como rodar (modo desenvolvimento)
 
 > **Pré-requisitos:** **JDK 11+**, **Node 18+**. Maven Wrapper e Vite já estão no projeto.
