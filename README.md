@@ -37,15 +37,6 @@ Sistema para **agendar transferências** calculando a **taxa por faixa de dias**
 
 > Pré-requisitos: **Docker** e **Docker Compose** instalados.
 
-### Arquivos esperados
-Se ainda não criou, adicione estes arquivos (nos caminhos indicados):
-
-- `api/Dockerfile` — build e runtime da API Spring Boot  
-- `frontend/Dockerfile` — build do front (Vite) e runtime em **nginx**  
-- `frontend/nginx.conf` — entrega do SPA e **proxy** `/api → api:8080`  
-- `docker-compose.yml` — orquestra API + Front  
-- `.dockerignore` *(opcional)* — ignora `target/`, `node_modules/`, etc.
-
 
 ### Subir os containers
 Na **raiz do repositório**:
@@ -133,16 +124,6 @@ Em outro terminal:
       }
     ]
 
----
-
-## Rotas (Frontend)
-
-- `/` — **Listar** transferências  
-  - Colunas: **Origem, Destino, Valor, Taxa, Transferência**  
-  - Clique no ▸ para ver detalhes (ID, Agendado em, Total, Status)
-  - Busca + ordenar (por data/valor/taxa/total)
-- `/schedule` — **Agendar** transferência  
-  - Validação básica no client; erros da API exibidos no topo
 
 ---
 
